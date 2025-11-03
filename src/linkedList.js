@@ -89,7 +89,7 @@ class LinkedList {
     return curr;
   }
 
-  contains(searchValue) {
+  contains(searchValue, propToCheck = undefined) {
     if (this.#head === null) {
       return false;
     }
@@ -97,7 +97,8 @@ class LinkedList {
     let hasFound = false;
     let curr = this.#head;
     while (curr) {
-      if (curr.value === searchValue) {
+      const value = (propToCheck) ? curr.value[propToCheck] : curr.value;
+      if (value === searchValue) {
         hasFound = true;
         break;
       }
@@ -107,7 +108,7 @@ class LinkedList {
     return hasFound;
   }
 
-  find(searchValue) {
+  find(searchValue, propToCheck = undefined) {
     if (this.#head === null) {
       return null;
     }
@@ -115,7 +116,8 @@ class LinkedList {
     let locationIndex = null;
     let curr = this.#head;
     for (let i = 0; curr; i++) {
-      if (curr.value === searchValue) {
+      const value = (propToCheck) ? curr.value[propToCheck] : curr.value;
+      if (value === searchValue) {
         locationIndex = i;
         break;
       }
