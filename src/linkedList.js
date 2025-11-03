@@ -177,6 +177,18 @@ class LinkedList {
     return str;
   }
 
+  toArray() {
+    const arr = [];
+    let curr = this.#head;
+
+    while (curr) {
+      arr.push(curr.value);  
+      curr = curr.nextNode;
+    }
+
+    return arr;
+  }
+
 }
 
 class Node {
