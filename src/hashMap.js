@@ -1,3 +1,5 @@
+import { LinkedList } from "./linkedList.js";
+
 /**
  * @class HashMap
  * A hash map to store strings
