@@ -186,7 +186,10 @@ class Node {
   }
 
   toString() {
-    return `( ${this.value} )`;
+    // @todo UNCOMMENT THIS once done with testing
+    // return `( ${this.value} )`;
+    const entry = this.value;
+    return `( ${entry.key}: ${entry.value} )`;
   }
 }
 
